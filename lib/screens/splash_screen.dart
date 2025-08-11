@@ -34,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             const SizedBox(height: 24), 
             const Text(
-              'AntiKode Market',
+              'AntiMarket',
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,

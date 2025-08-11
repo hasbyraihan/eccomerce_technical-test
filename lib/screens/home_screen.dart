@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'product_detail_screen.dart';
+import '../screens/product_detail_screen.dart';
 import '../providers/product_providers.dart'; // pastikan path sesuai
 import '../widget/banner_carousel.dart'; // widget ProductCard yang sudah dibuat
 import '../widget/search_product.dart'; // widget ProductCard yang sudah dibuat

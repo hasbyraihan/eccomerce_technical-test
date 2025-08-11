@@ -24,20 +24,20 @@ class CartNotifier extends StateNotifier<List<CartItem>> {
     }
   }
 
-  void removeItem(String title) {
-    state = state.where((element) => element.title != title).toList();
+  void removeItem(CartItem item) {
+    state = state.where((element) => element != item).toList();
   }
 
-  void updateQuantity(String title, int newQuantity) {
-    final index = state.indexWhere((element) => element.title == title);
-    if (index != -1) {
-      final updatedItem = state[index].copyWith(quantity: newQuantity);
-      state = [
-        for (int i = 0; i < state.length; i++)
-          if (i == index) updatedItem else state[i],
-      ];
-    }
+void updateQuantity(CartItem item, int newQuantity) {
+  final index = state.indexWhere((element) => element.title == item.title);
+  if (index != -1) {
+    final updatedItem = state[index].copyWith(quantity: newQuantity);
+    state = [
+      for (int i = 0; i < state.length; i++)
+        if (i == index) updatedItem else state[i],
+    ];
   }
+}
 
   double get totalPrice {
     return state.fold(0, (sum, item) => sum + item.subtotal);

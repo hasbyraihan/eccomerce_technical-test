@@ -83,7 +83,7 @@ class ProductCard extends StatelessWidget {
 
                   // 3. Widget kedua adalah harga (tidak perlu dibungkus)
                   Text(
-                    '\$ ${product.price ?? 0}',
+                    '\$ ${product.price}',
                     style: const TextStyle(fontSize: 12, color: Colors.grey),
                   ),
                 ],
