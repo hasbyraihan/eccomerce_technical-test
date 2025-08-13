@@ -10,44 +10,54 @@ class ProfileScreen extends ConsumerWidget {
     final Color primaryColor = Theme.of(context).primaryColor;
     final Color textColor = Colors.grey.shade800;
     final Color subtextColor = Colors.grey.shade600;
-    final Color backgroundColor = Colors.grey.shade100;
     final Color cardColor = Colors.white;
 
     return Scaffold(
-      backgroundColor: backgroundColor,
-      appBar: AppBar(
-        title: Text(
-          'Profil Saya',
-          style: TextStyle(color: textColor, fontWeight: FontWeight.bold),
-        ),
-        backgroundColor: cardColor,
-        elevation: 0.5,
-        centerTitle: true,
-      ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              // --- Bagian Header Profil ---
-              _buildProfileHeader(textColor, subtextColor),
-              const SizedBox(height: 24),
+        // backgroundColor di sini tidak lagi diperlukan karena diatur oleh Container
+        body: Container(
+          // 1. Tambahkan Container sebagai pembungkus utama
+          width: double.infinity,
+          height: double.infinity,
+          decoration: BoxDecoration(
+            // 2. Definisikan LinearGradient dengan 3 warna
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                Colors.orange.shade200, // Warna oranye paling atas
+                Colors.orange.shade50,  // Warna oranye pudar di tengah
+                Colors.white,           // Warna putih paling bawah
+              ],
+            ),
+          ),
+          child: SingleChildScrollView(
+            // 3. Konten asli Anda sekarang menjadi child dari Container
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const SizedBox(height: 50),
+                  // --- Bagian Header Profil ---
+                  _buildProfileHeader(textColor, subtextColor),
+                  const SizedBox(height: 24),
 
-              // --- Bagian Statistik Pengguna ---
-              _buildStatsCounter(primaryColor, textColor, subtextColor),
-              const SizedBox(height: 20),
+                  // --- Bagian Statistik Pengguna ---
+                  _buildStatsCounter(primaryColor, textColor, subtextColor),
+                  const SizedBox(height: 20),
 
-              // --- Bagian Menu Opsi ---
-              _buildOptionMenu(cardColor, textColor),
-              const SizedBox(height: 20),
-              
-              // --- Tombol Logout ---
-              _buildLogoutButton(context),
-            ],
+                  // --- Bagian Menu Opsi ---
+                  _buildOptionMenu(cardColor, textColor),
+                  const SizedBox(height: 20),
+                  
+                  // --- Tombol Logout ---
+                  _buildLogoutButton(context),
+                ],
+              ),
+            ),
           ),
         ),
-      ),
+      
     );
   }
 
@@ -66,7 +76,7 @@ class ProfileScreen extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Gemini AI',
+                'Hasby Raihan',
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
@@ -75,7 +85,7 @@ class ProfileScreen extends ConsumerWidget {
               ),
               const SizedBox(height: 4),
               Text(
-                'gemini.ai@example.com',
+                'hasby@gmail.com',
                 style: TextStyle(
                   fontSize: 14,
                   color: subtextColor,
@@ -113,7 +123,7 @@ class ProfileScreen extends ConsumerWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          _buildStatItem('12', 'Pesanan', primaryColor, textColor, subtextColor),
+          _buildStatItem('12', 'Order', primaryColor, textColor, subtextColor),
           _buildStatItem('8', 'Wishlist', primaryColor, textColor, subtextColor),
           _buildStatItem('5', 'Voucher', primaryColor, textColor, subtextColor),
         ],
@@ -155,12 +165,12 @@ class ProfileScreen extends ConsumerWidget {
         ),
         child: Column(
           children: [
-            _buildListTile(Icons.person_outline, 'Akun Saya', textColor, () {}),
-            _buildListTile(Icons.location_on_outlined, 'Alamat Pengiriman', textColor, () {}),
-            _buildListTile(Icons.payment_outlined, 'Metode Pembayaran', textColor, () {}),
-            _buildListTile(Icons.notifications_none_outlined, 'Notifikasi', textColor, () {}),
-            _buildListTile(Icons.security_outlined, 'Keamanan Akun', textColor, () {}),
-            _buildListTile(Icons.help_outline, 'Pusat Bantuan', textColor, () {}),
+            _buildListTile(Icons.person_outline, 'My Profile', textColor, () {}),
+            _buildListTile(Icons.location_on_outlined, 'Location Delivery', textColor, () {}),
+            _buildListTile(Icons.payment_outlined, 'Payment', textColor, () {}),
+            _buildListTile(Icons.notifications_none_outlined, 'Notification', textColor, () {}),
+            _buildListTile(Icons.security_outlined, 'Security Account', textColor, () {}),
+            _buildListTile(Icons.help_outline, 'FAQ', textColor, () {}),
           ],
         ),
       ),

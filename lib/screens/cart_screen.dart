@@ -20,6 +20,8 @@ class CartScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Cart'),
+        backgroundColor: Colors.white,
+        elevation: 0.5
       ),
       body: cartItems.isEmpty
           ? const Center(
@@ -43,7 +45,7 @@ class CartScreen extends ConsumerWidget {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                   decoration: BoxDecoration(
-                    color: Colors.grey.shade200,
+                    color: const Color.fromARGB(255, 255, 255, 255),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black.withOpacity(0.1),

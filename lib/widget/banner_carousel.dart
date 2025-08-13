@@ -22,16 +22,17 @@ class BannerCarousel extends StatelessWidget {
         viewportFraction: 0.85,
         aspectRatio: 16 / 9,
       ),
-      items: images.map((imagePath) {
-        return ClipRRect(
-          borderRadius: BorderRadius.circular(12),
-          child: Image.asset(
-            imagePath,
-            fit: BoxFit.cover,
-            width: double.infinity,
-          ),
-        );
-      }).toList(),
+      items:
+          images.map((imagePath) {
+            return ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: Image.asset(
+                imagePath,
+                fit: BoxFit.cover,
+                width: double.infinity,
+              ),
+            );
+          }).toList(),
     );
   }
 }

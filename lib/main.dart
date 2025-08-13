@@ -12,9 +12,7 @@ void main() async {
 
   runApp(
     ProviderScope(
-      overrides: [
-        sharedPreferencesProvider.overrideWithValue(sharedPrefs),
-      ],
+      overrides: [sharedPreferencesProvider.overrideWithValue(sharedPrefs)],
       child: const MyApp(),
     ),
   );
@@ -33,12 +31,26 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'My App',
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color.fromARGB(255, 255, 149, 0), // Ganti dengan warna utama Anda
+        ),
+        // Anda juga bisa menambahkan ini untuk kompatibilitas
+        primaryColor: const Color.fromARGB(255, 247, 177, 72),
+
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: const Color.fromARGB(255, 247, 171, 58), 
+            foregroundColor: Colors.black, 
+          ),
+        ),
+      ),
       initialRoute: '/',
       routes: {
-      '/': (context) => const SplashScreen(),
-      '/home': (context) => const MainScreen(),
+        '/': (context) => const SplashScreen(),
+        '/home': (context) => const MainScreen(),
       },
     );
   }
 }
-
