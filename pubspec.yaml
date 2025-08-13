@@ -12,7 +12,7 @@ dependencies:
 
   # UI & UX Packages
   cached_network_image: ^3.4.1 # Cache gambar dari network
-  carousel_slider: ^4.2.1      # Carousel untuk banner
+  carousel_slider: ^5.0.0      # Carousel untuk banner
   cupertino_icons: ^1.0.8      # Ikon gaya iOS
   lottie: ^3.1.2               # Animasi Lottie (JSON)
 
