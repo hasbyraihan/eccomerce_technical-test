@@ -4,7 +4,6 @@ import '../screens/product_detail_screen.dart';
 import 'product_card.dart';
 
 class ProductList extends StatelessWidget {
-  // Perbaikan Tipe Data: Jadikan lebih spesifik
   final List<Product> products;
 
   const ProductList({
@@ -15,7 +14,6 @@ class ProductList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (products.isEmpty) {
-      // Tampilan jika produk kosong bisa dibuat lebih baik
       return const Center(
         child: Padding(
           padding: EdgeInsets.all(32.0),
@@ -24,9 +22,7 @@ class ProductList extends StatelessWidget {
       );
     }
 
-    // Gunakan GridView.builder untuk performa terbaik
     return GridView.builder(
-      // Fix untuk layout di dalam SingleChildScrollView
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       

@@ -183,7 +183,6 @@ class _AddToCartModalState extends State<AddToCartModal> {
         onPressed: () {
           widget.onAdd(count);
           // Navigator.pop(context) sudah dipanggil di parent,
-          // tapi lebih baik dipanggil di sini setelah onAdd.
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: theme.primaryColor,

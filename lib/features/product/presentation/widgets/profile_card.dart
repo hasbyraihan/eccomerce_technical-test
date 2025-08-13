@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:ui'; // Diperlukan untuk BackdropFilter
 
 class ProfileWidget extends StatelessWidget {
   const ProfileWidget({super.key});
@@ -29,9 +28,7 @@ class ProfileWidget extends StatelessWidget {
           // Foto Profil
           const CircleAvatar(
             radius: 30,
-            backgroundImage: NetworkImage(
-              'https://i.pravatar.cc/150?u=a042581f4e29026704d',
-            ),
+            backgroundImage: AssetImage('assets/images/profile.png'),
           ),
           const SizedBox(width: 16),
           // Info Pengguna
